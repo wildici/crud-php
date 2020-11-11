@@ -10,7 +10,7 @@
 <body>
     <div class="container" id="tamanhoContainer">
         <h3 class="text-center my-5">Formulário de Cadastro</h3>
-        <form action="inserir_produto.php" method="post">
+        <form action="/controller/inserir_produto.php" method="post">
 
             <div class="form-group">
                 <label for="IDnumeroProduto">Nro Produto</label>
@@ -30,20 +30,20 @@
             <div class="form-group">
                 <label for="IDcategoriaProduto">Categoria</label>
                 <select class="form-control" id="IDcategoriaProduto" name="categoriaProduto">
-                    <option>Selecione...</option>
-                    <option>Periférico</option>
-                    <option>Hardware</option>
-                    <option>Celulares</option>
+                    <option value="">Selecione...</option>
+                    <option value="periferico">Periférico</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="celulares">Celulares</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="IDfornecedorProduto">Fornecedor</label>
                 <select class="form-control" id="IDfornecedorProduto" name="fornecedorProduto">
-                    <option>Selecione...</option>
-                    <option>Fornecedor A</option>
-                    <option>Fornecedor B</option>
-                    <option>Fornecedor C</option>
+                    <option value="">Selecione...</option>
+                    <option value="fornecedorA">Fornecedor A</option>
+                    <option value="fornecedorB">Fornecedor B</option>
+                    <option value="fornecedorC">Fornecedor C</option>
                 </select>
             </div>
 
