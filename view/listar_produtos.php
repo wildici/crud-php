@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://kit.fontawesome.com/9ba2058a11.js" crossorigin="anonymous"></script>
@@ -11,7 +11,8 @@
 <body>
     <div class="container">
     <h3 class="text-center my-5">Lista de Produtos</h3>
-        <table class="table table-hover text-center">
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
             <thead>
                 <tr class="bg-primary text-light">
                 <th scope="col">Nro</th>
@@ -44,7 +45,10 @@
                         <td><?php echo $categoriaProduto ?></td>
                         <td><?php echo $qtdProduto ?></td>
                         <td><?php echo $fornecedorProduto ?></td>
-                        <td><a class="btn btn-warning btn-sm text-light" href="../controller/editar_produto.php?id=<?php echo $id_estoque ?>" role="button"><i class="fas fa-pen"></i></a></td>
+                        <td>
+                            <a class="btn btn-warning btn-sm text-light my-2" href="../controller/editar_produto.php?id=<?php echo $id_estoque ?>" role="button"><i class="fas fa-pen"></i></a>
+                            <a class="btn btn-danger btn-sm text-light" href="../controller/deletar_produto.php?id=<?php echo $id_estoque ?>" role="button"><i class="fas fa-trash-alt"></i></a>
+                        </td>
                     </tr>
                         <?php 
                             }
@@ -54,6 +58,8 @@
                 
             </tbody>
         </table>
+    </div>
+        <a class="btn btn-outline-danger my-3" href="http://localhost/crud-php/" role="button">Voltar</a>
     </div>
 
     <script src="../assets/js/bootstrap.min.js"></script>
