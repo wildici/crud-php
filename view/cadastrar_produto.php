@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION["user_portal"])) {
+        header("location:../index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -56,7 +64,7 @@
              -->
 
             <button class="btn btn-primary mt-5 btn-block font-weight-bold" type="submit">Cadastrar</button>
-            <a class="btn btn-outline-danger btn-block" href="http://localhost/crud-php/" role="button">Voltar</a>
+            <a class="btn btn-outline-danger btn-block" href="http://localhost/crud-php/view/painel.php" role="button">Voltar</a>
 
         </form>
     </div>

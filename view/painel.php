@@ -1,3 +1,23 @@
+<?php
+    include("../controller/conexao.php");
+    session_start();
+
+    if (isset($_SESSION["user_portal"])) {
+        $user = $_SESSION["user_portal"];
+    }
+
+    $buscar = "SELECT nome FROM usuario WHERE id_usuario = {$user}";
+
+    $sql = mysqli_query($conexao, $buscar);
+
+    if (!$sql) {
+        header("location:../index.php");
+    }
+
+    $sql = mysqli_fetch_assoc($sql);
+    $nome = $sql["nome"];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,6 +29,15 @@
     <title>Formulário de Cadastro</title>
 </head>
 <body>
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+  <span class="navbar-brand mb-0 h1">Olá <?php echo $nome; ?> </span>
+  
+  <a href="../controller/logout.php"><span class="navbar-brand mb-0 h1"><i class="fas fa-power-off"></i></span></a> 
+  </div>
+</nav>
+
     <div class="container">
         <h3 class="text-center my-5">O que iremos fazer?</h3>
         <div class="row text-center">

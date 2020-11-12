@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if (!isset($_SESSION["user_portal"])) {
+        header("location:../index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -59,7 +67,7 @@
             </tbody>
         </table>
     </div>
-        <a class="btn btn-outline-danger my-3" href="http://localhost/crud-php/" role="button">Voltar</a>
+        <a class="btn btn-outline-danger my-3" href="http://localhost/crud-php/view/painel.php" role="button">Voltar</a>
     </div>
 
     <script src="../assets/js/bootstrap.min.js"></script>
