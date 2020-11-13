@@ -55,7 +55,7 @@
                         <td><?php echo $fornecedorProduto ?></td>
                         <td>
                             <a class="btn btn-warning btn-sm text-light my-2" href="../controller/editar_produto.php?id=<?php echo $id_estoque ?>" role="button"><i class="fas fa-pen"></i></a>
-                            <a class="btn btn-danger btn-sm text-light" href="../controller/deletar_produto.php?id=<?php echo $id_estoque ?>" role="button"><i class="fas fa-trash-alt"></i></a>
+                            <a class="btn btn-danger btn-sm text-light" href="../controller/deletar_produto.php?id=<?php echo $id_estoque ?>" role="button" onclick="return confirm('Deseja realmente apagar o produto?')"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                         <?php 

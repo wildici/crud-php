@@ -19,6 +19,8 @@
             $msg = "Login sem sucesso!";
         } else {
             $_SESSION["user_portal"] = $informacao["id_usuario"];
+            $_SESSION["user_nome"] = $informacao["nome"];
+            $_SESSION["user_email"] = $informacao["email"];
             header("location:view/painel.php");
         }
     }

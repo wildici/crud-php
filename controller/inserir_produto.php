@@ -13,7 +13,7 @@ $sql = "INSERT INTO estoque (nroproduto, nomeproduto, categoria, quantidade, for
 $inserir = mysqli_query($conexao, $sql);
 
 if($inserir) {
-    header('Location: http://localhost/crud-php/');
+    header('Location: http://localhost/crud-php/view/listar_produtos.php');
 } else {
     echo 'Erro ao cadastrar produto';
 }

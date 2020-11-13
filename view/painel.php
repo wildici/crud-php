@@ -1,21 +1,9 @@
 <?php
-    include("../controller/conexao.php");
     session_start();
 
-    if (isset($_SESSION["user_portal"])) {
-        $user = $_SESSION["user_portal"];
-    }
-
-    $buscar = "SELECT nome FROM usuario WHERE id_usuario = {$user}";
-
-    $sql = mysqli_query($conexao, $buscar);
-
-    if (!$sql) {
+    if (!isset($_SESSION["user_portal"])) {
         header("location:../index.php");
     }
-
-    $sql = mysqli_fetch_assoc($sql);
-    $nome = $sql["nome"];
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +20,16 @@
 
 <nav class="navbar navbar-dark bg-primary">
     <div class="container">
-  <span class="navbar-brand mb-0 h1">Olá <?php echo $nome; ?> </span>
+  <span class="navbar-brand mb-0 h1">Olá <?php echo $_SESSION["user_nome"]; ?> </span>
   
-  <a href="../controller/logout.php"><span class="navbar-brand mb-0 h1"><i class="fas fa-power-off"></i></span></a> 
+  <a href="../controller/logout.php" onclick="return confirm('Deseja realmente sair?')"><span class="navbar-brand mb-0 h1"><i class="fas fa-power-off"></i></span></a> 
   </div>
 </nav>
 
     <div class="container">
         <h3 class="text-center my-5">O que iremos fazer?</h3>
         <div class="row text-center">
-            <div class="col-sm-6">
+            <div class="col-sm-6 mt-5">
                 <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Adicionar Produto</h5>
@@ -50,7 +38,7 @@
                 </div>
                 </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mt-5">
                 <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Procurar produto</h5>
@@ -59,7 +47,16 @@
                 </div>
                 </div>
             </div>
+            <div class="col-sm-6 my-5">
+                <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Alterar meus dados</h5>
+                    <p class="card-text">Opção para alterar dados pessoais cadastrados no sistema.</p>
+                    <a href="alterar_usuario.php" class="btn btn-warning btn-lg text-light"><i class="fas fa-edit"></i></a>
+                </div>
+                </div>
             </div>
+        </div>
 
     </div>
 

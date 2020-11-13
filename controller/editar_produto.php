@@ -76,7 +76,7 @@
             <button class="btn btn-success mt-5 btn-block font-weight-bold" type="submit">Alterar</button>
             <button class="btn btn-outline-danger btn-block">Voltar</button>
 
-                <?php }?>
+                <?php } ?>
         </form>
     </div>
 
